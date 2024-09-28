@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <section>
+        <div class="blocks">
+            <p class="btn active">Кнопка 1</p>
+            <p class="btn">Кнопка 2</p>
+            <p class="btn">Кнопка 3</p>
+        </div>
+        <div class="texts">
+            <p class="text active">Тут должн быть очень важная информация</p>
+            <p class="text">Колобок повесился</p>
+            <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                Inventore atque eius necessitatibus dolor labore 
+                porro recusandae adipisci tempora voluptas deserunt fugit ipsum quod, sed corporis?</p>
+        </div>
+    </section>
+
+
+
+    <script>
+        const Knopki = document.querySelectorAll('.btn');
+        const texts = document.querySelectorAll('.text');
+
+        Knopki  .forEach((item, index) => {
+            item.addEventListener('click', function () {
+                document.querySelector('.btn.active').classList.remove('active');
+                item.classList.add('active');
+
+                document.querySelector('.text.active').classList.remove('active');
+                texts[index].classList.add('active');
+            })
+        })
+    </script>
+</body>
+</html>
